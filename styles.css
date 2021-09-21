@@ -20,8 +20,8 @@ body {
   padding: 0 8rem;
 
   /* fade in animation */
-  /* opacity: 0;
-  transition: all 0.3; */
+  /* opacity: 0; */
+  transition: all 0.3;
 }
 
 li,
@@ -55,27 +55,57 @@ a {
   margin-left: 2rem;
 }
 
-.nav__item:last-child {
-  margin: 0 0 0 5rem;
+.responsive__menu {
+  position: relative;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80px;
+  height: 80px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 
-.nav__link--btn:link,
-.nav__link--btn:visited {
-  padding: 0.6rem 2.2rem;
-  border-radius: 3rem;
-  background-color: var(--color-secondary);
-  color: #222;
+.responsive__menu span {
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  background: rgb(18, 80, 172);
+  border-radius: 9px;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 2px 5px rgba(48, 47, 47, 0.815);
 }
 
-.nav__link--btn:hover,
-.nav__link--btn:active {
-  color: inherit;
-  background-color: var(--color-secondary-darker);
-  color: #333;
+.responsive__menu span:nth-child(1) {
+  transform: translateY(-16px);
 }
+
+.responsive__menu span:nth-child(3) {
+  transform: translateY(16px);
+}
+
+/* Responsive Menu Animation */
+.responsive__menu.open :nth-child(1) {
+  transform: rotate(45deg);
+  width: 40px;
+}
+
+.responsive__menu.open span:nth-child(2) {
+  transform: translateX(-50px);
+  opacity: 0;
+  box-shadow: none;
+}
+
+.responsive__menu.open :nth-child(3) {
+  transform: rotate(-45deg);
+  width: 40px;
+}
+
+/* Header Section */
 
 .header__section {
-  position: relative;
 }
 
 .header__section img {
@@ -85,10 +115,6 @@ a {
 }
 
 .header__title {
-  position: absolute;
-  top: 0;
-  /* left: 50%; */
-  /* transform: translate(-50%, -50%); */
 }
 
 .btn--text {
@@ -111,4 +137,18 @@ a {
   border-top: 1px solid #ddd;
 
   transition: transform 1s, opacity 1s;
+}
+
+/* MEDIA QUERIES */
+
+@media all and (max-width: 768px) {
+  .responsive__menu {
+    display: flex;
+  }
+}
+
+@media all and (max-width: 480px) {
+}
+
+@media all and (max-width: 320px) {
 }
