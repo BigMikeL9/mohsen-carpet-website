@@ -12,10 +12,9 @@
     <link rel="stylesheet" href="styles.css" />
 
     <!-- Fonts links -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
       rel="stylesheet"
     />
 
@@ -25,13 +24,18 @@
   <body>
     <header class="header">
       <nav class="nav">
-        <h1>Carpets</h1>
-        <button class="responsive__menu">
+        <div class="nav__logo-container">
+          <a href="#"> <h1>CARPET</h1></a>
+        </div>
+
+        <button class="nav__hamburger">
           <span></span>
           <span></span>
           <span></span>
         </button>
+      </nav>
 
+      <div class="nav__drawer">
         <ul class="nav__links">
           <li class="nav__item">
             <a class="nav__link" href="#">Home</a>
@@ -46,7 +50,7 @@
             <a class="nav__link" href="#">Contact Us</a>
           </li>
         </ul>
-      </nav>
+      </div>
 
       <div class="header__section">
         <!-- <img src="img/carpet-2.jpg" class="header__img" alt="Carpet-Image" /> -->

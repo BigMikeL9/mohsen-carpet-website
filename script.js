@@ -1,9 +1,17 @@
 'use strict';
 
-const responsiveMenu = document.querySelector('.responsive__menu');
-const navLinks = document.querySelector('.nav__links');
+const hamburgerMenu = document.querySelector('.nav__hamburger');
+const navDrawer = document.querySelector('.nav__drawer');
 
 // Responsive Menu
-responsiveMenu.addEventListener('click', function () {
-  responsiveMenu.classList.toggle('open');
+hamburgerMenu.addEventListener('click', function () {
+  hamburgerMenu.classList.toggle('open');
+  navDrawer.classList.toggle('active');
+});
+
+document.addEventListener('click', function (event) {
+  hamburgerMenu.classList.toggle('open');
+  navDrawer.classList.toggle('active');
+
+  console.log(event.target);
 });
