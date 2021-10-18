@@ -25,7 +25,9 @@
   --color-comingsoon-shadow-40: rgba(255, 128, 0, 0.4);
 }
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
@@ -163,7 +165,7 @@ html::-webkit-scrollbar-track {
   position: absolute;
   width: 5rem;
   height: 0.6rem;
-  border-radius: 24px;
+  border-radius: 2.4rem;
   background: var(--color-matteblack);
   transition: all 0.5s ease-in-out;
   box-shadow: var(--color-black-shadow-dark);
@@ -225,6 +227,7 @@ html::-webkit-scrollbar-track {
   padding: 1rem 0;
   border-bottom: 2px solid var(--color-matteblack-trans);
   opacity: 0;
+  transition: all 0.3s;
 }
 
 .nav__item a {
@@ -233,6 +236,10 @@ html::-webkit-scrollbar-track {
   transition: all 0.2s ease;
   text-transform: uppercase;
   font-weight: 900;
+}
+
+.nav__links .nav__item:hover {
+  padding-left: 1rem;
 }
 
 /* Nav Items Animation */
@@ -298,20 +305,35 @@ html::-webkit-scrollbar-track {
   font-family: inherit;
   font-weight: 500;
   border: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 2px;
+  border-bottom: 0.1rem solid currentColor;
+  padding-bottom: 0.2rem;
   cursor: pointer;
   transition: all 0.3s;
 }
 
-/* change later */
+/* ////////////////////// */
+/* general section styling */
 .section {
   padding: 15rem 3rem;
-  border-top: 1px solid #ddd;
-
   transition: transform 1s, opacity 1s;
 }
 
+.section--hidden {
+  opacity: 0;
+}
+
+/* ////////////////////// */
+/* promo section */
+
+.promo__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+/* //////////////////////////////////////////////////// */
 /* MEDIA QUERIES */
 
 @media all and (max-width: 768px) {
